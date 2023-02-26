@@ -45,14 +45,14 @@ const Todos = (props: any) => {
         })
     }
 
-    const updateTodo = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> | React.MouseEvent<HTMLInputElement>, id: string) => {
-        const temp = [...todos];
-        const index = temp.findIndex((item: Todos) => item.id === id);
-        temp[index].item = e.currentTarget.value;
+    // const updateTodo = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement> | React.MouseEvent<HTMLInputElement>, id: string) => {
+    //     const temp = [...todos];
+    //     const index = temp.findIndex((item: Todos) => item.id === id);
+    //     temp[index].item = e.currentTarget.value;
 
-        set_todos(temp);
+    //     set_todos(temp);
 
-    }
+    // }
     const handleUpdate = (id: string) => {
         const temp = [...todos];
         const index = temp.findIndex(item => item.id === id);
@@ -72,8 +72,7 @@ const Todos = (props: any) => {
         <>
 
             <form onSubmit={handleSubmit} className="row mb-4">
-                <div className="col-md-3"></div>
-                <div className="col-md-4">
+                <div className="col-md-10">
                     <input type="text" className="form-control" placeholder="create list item" value={todo} onChange={(e) => set_todo(e.target.value)} />
                 </div>
                 <div className="col-md-2">
@@ -81,8 +80,7 @@ const Todos = (props: any) => {
                 </div>
             </form>
             <div className="row">
-                <div className="col-md-3"></div>
-                <div className="col-md-6">
+                <div className="col-md-12">
                     <table className="table table-bordered">
                         <thead className="table-dark">
                             <tr>
